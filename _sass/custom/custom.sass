@@ -1,0 +1,237 @@
+$body-text-color-light: $grey-dk-000
+
+h4
+    @include fs-4
+
+h1 + .toc,
+h2 + .toc,
+h3 + .toc,
+h4 + .toc
+    border-top: none
+    margin-top: -$gutter-spacing !important
+
+h1 + h2,
+h2 + h3,
+h3 + h4
+    margin-top: 10px  !important
+
+.site-footer
+    display: none
+
+.lead
+    font-size: 1.4rem
+    @extend .fw-300
+    color: darken($grey-dk-000, 20%)
+    line-height: 1.5
+    margin-top: $sp-4 !important
+
+.source
+    @extend .fs-3
+
+.main-content a,
+.main-content a:not([class])
+    background-image: none
+    text-decoration: underline
+    text-decoration-color: $border-color
+    -webkit-text-decoration-color: $border-color
+    white-space: normal
+
+    &:hover
+        text-decoration-color: $link-color !important
+        -webkit-text-decoration-color: $link-color !important
+
+iframe, embed
+    @extend .mt-4
+    width: 560px
+    height: 315px
+
+.main-content
+    .more-link
+        border-top: solid 1px $border-color
+        border-bottom: solid 1px $border-color
+        margin: $gutter-spacing 0 !important
+        padding: $gutter-spacing/2 $gutter-spacing $gutter-spacing/2 $gutter-spacing/2
+        color: $body-text-color-light
+        @extend .fs-3
+        position: relative
+
+        &:hover
+            background-color: $grey-lt-000
+
+        &:after
+            position: absolute
+            right: 0.5rem
+            top: calc(50% - 0.75rem)
+            content: "→"
+            @extend .fs-5
+            color: $link-color
+
+        a
+            color: $body-text-color-light
+
+        > a:first-child
+            color: $link-color
+            display: block
+            background-image: none
+            text-decoration: none
+            @extend .fs-5
+
+            &:hover
+                background-image: none
+
+
+    .more-link + .more-link
+        border-top: none
+        margin-top: -$gutter-spacing !important
+
+    .next-link
+        display: flex
+        justify-content: center
+        margin: $gutter-spacing*2 0
+
+        a
+            display: block
+            text-decoration: none !important
+
+            &:hover
+                text-decoration: none !important
+
+            &:last-child
+                &:after
+                    content: "→"
+                    margin-left: 0.5rem
+                    @extend .fs-5
+                    background-color: $border-color
+                    border-radius: 20px
+                    width: 30px
+                    height: 30px
+                    display: inline-flex
+                    align-content: center
+                    justify-content: center
+
+    .image--right
+        max-width: 45%
+        float: right
+        padding: 0.4rem 0 1rem 1rem
+
+    .image--left
+        max-width: 45%
+        float: left
+        padding: 0.4rem 1rem 1rem 0
+
+    .image--manual
+        display: block
+        margin: $gutter-spacing/2 0 $gutter-spacing
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 12%), 0 3px 10px rgba(0, 0, 0, 8%)
+        width: 500px
+        max-width: 100%
+        height: auto
+
+    .caption
+        @extend .fs-3
+        color: $body-text-color-light
+        margin-bottom: $gutter-spacing
+
+        img
+            display: block
+            margin-bottom: $gutter-spacing/4
+
+    table
+        border-collapse: collapse
+        border-spacing: 0px
+
+    .table--sm
+        th,
+        td
+            @include fs-1
+            min-width: 0px
+
+    .vertical-table-header
+        padding: 0
+
+        > div
+            padding: 0.5rem 0.75rem
+            writing-mode: vertical-lr
+            -ms-writing-mode: tb-rl
+            transform: rotate(180deg)
+            white-space: nowrap
+
+    dl
+        @include fs-3
+        padding: $gutter-spacing/2 $gutter-spacing/2 $gutter-spacing/4 $gutter-spacing/2
+        border-radius: $border-radius
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 12%), 0 3px 10px rgba(0, 0, 0, 8%)
+
+        dt
+            font-weight: bold
+
+        dd
+            margin-bottom: $gutter-spacing/2
+
+    .references-header
+        border-top: $border $border-color
+        margin-top: $gutter-spacing
+        padding-top: $gutter-spacing/2
+        font-weight: bold
+
+    .references
+        @include fs-3
+
+    .appendix-header
+        @include fs-4
+        font-weight: bold
+        border: solid 1px $border-color
+        border-bottom: none
+        margin-top: $gutter-spacing
+        margin-bottom: 0
+        padding: $gutter-spacing/2
+        background-color: $grey-lt-000
+
+    .appendix-content
+        margin-top: -$gutter-spacing/2
+        border: solid 1px $border-color
+        margin-bottom: $gutter-spacing
+        padding-bottom: $gutter-spacing/2
+        padding-left: $gutter-spacing/2
+        padding-top: $gutter-spacing
+
+    ol.appendix-content
+        padding-left: 1.5rem + $gutter-spacing/2
+
+    .large-list
+        list-style-type: none
+        counter-reset: step-counter
+
+        li
+            &::before
+                content: counter(step-counter, decimal)
+                counter-increment: step-counter
+        ol
+            counter-reset: sub-counter
+            padding-left: 2.2rem
+
+            > li
+                &::before
+                    left: -2rem
+                    content: counter(step-counter, decimal)"."counter(sub-counter, decimal)
+                    counter-increment: sub-counter
+
+                ol
+                    counter-reset: sub-sub-counter
+                    padding-left: 2.5rem
+
+                    li
+                        &::before
+                            left: -2.5rem
+                            content: counter(step-counter, decimal)"."counter(sub-counter, decimal)"."counter(sub-sub-counter, decimal)
+                            counter-increment: sub-sub-counter
+
+                        ol
+                            padding-left: 1.5rem
+                            counter-reset: sub-sub-sub-counter
+
+                            li
+                                &::before
+                                    left: -1.1rem
+                                    content: counter(sub-sub-sub-counter, disc)
+                                    counter-increment: sub-sub-sub-counter
