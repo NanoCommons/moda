@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 2 General physics
-nav_order: 20
+nav_order: 120
 description: 2 General physics of the model equations
 permalink: /MODA1/general-physics/
 parent: MODA1

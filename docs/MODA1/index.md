@@ -1,7 +1,7 @@
 ---
 layout: page
 title: MODA1
-nav_order: 1
+nav_order: 100
 description: MODA for Calculations of Binding Free Energies and Potentials of Mean Force
 permalink: /MODA1/
 has_references: true
